@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">RockPaperScissors</string>
+    <string name="gogame">Сыграем?</string>
+    <string name="button_scissor">Ножницы</string>
+    <string name="button_rock">Камень</string>
+    <string name="button_paper">Бумага</string>
+    <string name="button_topleft">прочти правила</string>
+    <string name="button_topright">посмотри как играют</string>
+
+</resources>
