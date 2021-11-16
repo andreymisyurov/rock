@@ -6,5 +6,8 @@
     <string name="button_paper">Бумага</string>
     <string name="button_topleft">прочти правила</string>
     <string name="button_topright">посмотри как играют</string>
+    <string name="backbutton">BACK</string>
+    <string name="nextslide">NEXT SLIDE</string>
+    <string name="label">введи свои имя</string>
 
 </resources>
