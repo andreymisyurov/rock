@@ -35,7 +35,7 @@
     <Button
         style="@style/DrawerArrowStyle"
         android:id="@+id/playbutton_left"
-        android:text="@string/button_rock"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
@@ -47,7 +47,7 @@
     <Button
         style="@style/DrawerArrowStyle"
         android:id="@+id/playbutton_right"
-        android:text="@string/button_paper"
+        android:text=""
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/playbutton_centr"
@@ -92,38 +92,28 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/button_topright"
         />
-    <Switch
+    <com.google.android.material.switchmaterial.SwitchMaterial
+        android:id="@+id/switcherMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_constraintStart_toEndOf="@id/nextslide"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toTopOf="@id/button_topright"
-        tools:ignore="MissingConstraints"
         />
-    <RadioGroup
-        android:id="@+id/radioGroup"
-        android:checkedButton="@+id/radio_button_1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:ignore="MissingConstraints">
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="WIN"/>
 
-        <RadioButton
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="LOSE"/>
-    </RadioGroup>
-    <com.google.android.material.slider.Slider
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@id/nextslide"
-        tools:ignore="MissingConstraints"/>
-
-
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:text="advertising space"
+    android:gravity="center"
+    android:textStyle="italic"
+    android:textSize="40dp"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/playbutton_centr"
+>
+</TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,13 +1,20 @@
 <resources>
     <string name="app_name">RockPaperScissors</string>
     <string name="gogame">Сыграем?</string>
-    <string name="button_scissor">Ножницы</string>
+    <string name="button_scissor">Жми</string>
     <string name="button_rock">Камень</string>
     <string name="button_paper">Бумага</string>
     <string name="button_topleft">прочти правила</string>
     <string name="button_topright">посмотри как играют</string>
     <string name="backbutton">BACK</string>
-    <string name="nextslide">NEXT SLIDE</string>
+    <string name="nextslide">Когда-то играли</string>
     <string name="label">введи свои имя</string>
+    <string name="night_mode">Night</string>
+    <string name="day_mode">Day</string>
+    <string name="about_creator">About Creator</string>
+    <string name="user_list">nothing</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Nothing</string>
+    <string name="about_creator_menu">Creator - Andrey Misyurov</string>
 
 </resources>

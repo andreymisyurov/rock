@@ -1,5 +1,7 @@
 package com.example.rock
 
+import android.annotation.SuppressLint
+import android.app.UiModeManager
 import android.net.Uri
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -11,13 +13,19 @@ import kotlin.random.Random
 import kotlin.random.nextInt
 import android.content.Intent
 import android.content.Intent.FLAG_ACTIVITY_NEW_TASK
+import android.view.Menu
+import android.widget.CompoundButton
+import android.widget.Switch
+import androidx.appcompat.app.AppCompatDelegate
+import androidx.core.content.getSystemService
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.android.material.switchmaterial.SwitchMaterial
 
 
-private const val BITCH_TAG = "BitchTag"
 private const val VALUES = "Values"
-private const val VALUE = "val"
 
 class MainActivity : AppCompatActivity() {
+
     private lateinit var playtext: TextView
     private lateinit var playbutton: Button
     private lateinit var manualbutton: Button
@@ -25,7 +33,9 @@ class MainActivity : AppCompatActivity() {
     private lateinit var rock: TextView
     private lateinit var scissor: TextView
     private lateinit var paper: TextView
-    lateinit var nextbutton: Button
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
+    private lateinit var switcherMode: SwitchMaterial
+    private lateinit var nextbutton: Button
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -35,17 +45,25 @@ class MainActivity : AppCompatActivity() {
         playbutton = findViewById(R.id.playbutton_centr)
         playtext = findViewById(R.id.text_centr)
         playtext.textSize = (55F)
-     //   scissor.text = "2"
+        //   scissor.text = "2"
+
+        switcherMode = findViewById(R.id.switcherMode)
+        switcherMode.setOnCheckedChangeListener { _ , isChecked ->
+            if (isChecked) {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES)
+            }
+            else {
+                AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
+            }
+        }
 
         playbutton.setOnClickListener {
             randomize()
-
         }
 
         if (savedInstanceState != null) {
             playtext.text = savedInstanceState.getString(VALUES)
         }
-
 
         manualbutton = findViewById(R.id.button_topleft)
         val manualintent = Intent(
@@ -54,79 +72,24 @@ class MainActivity : AppCompatActivity() {
         )
         manualbutton.setOnClickListener {
             startActivity(manualintent)
-
         }
 
         youtubebutton = findViewById(R.id.button_topright)
-
         val youtubeintent = Intent(
             Intent.ACTION_VIEW,
-            Uri.parse("http://www.youtube.com/watch?v=" + "-6fS2ndNs1U")
-        )
-        //youtubeintent.flags = FLAG_ACTIVITY_NEW_TASK
+            Uri.parse("http://www.youtube.com/watch?v=" + "-6fS2ndNs1U"))
         youtubebutton.setOnClickListener {
             startActivity(youtubeintent)
         }
 
         nextbutton = findViewById(R.id.nextslide)
-
         val intentbutton = Intent(this, manualgame::class.java)
-
-        nextbutton.setOnClickListener{
-
+        nextbutton.setOnClickListener {
             startActivity(intentbutton)
         }
 
     }
 
-    override fun onStart() {
-        super.onStart()
-        Log.d(
-            BITCH_TAG,
-            "",
-        )
-
-    }
-
-    override fun onResume() {
-        super.onResume()
-        Log.d(
-            BITCH_TAG,
-            "",
-        )
-    }
-
-    override fun onStop() {
-        super.onStop()
-        Log.d(
-            BITCH_TAG,
-            "",
-        )
-        //finish()
-
-    }
-
-    override fun onDestroy() {
-        super.onDestroy()
-        Log.d(
-            BITCH_TAG,
-            "",
-        )
-    }
-
-    override fun onPause() {
-        super.onPause()
-        Log.d(
-            BITCH_TAG,
-            "",
-        )
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Log.d(BITCH_TAG, "")
-
-    }
 
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
